@@ -37,21 +37,7 @@ const Shop = () => {
         setCart(copyCart)
     }
 
-    const SingleProduct = (product) => {
-        let copyCart ={...cart}
-
-        copyCart.title;
-        copyCart.price;
-        copyCart.description;
-        
-
-        setCart(copyCart)
-    }
-
-
-    
-
-    
+   
 
     return (
 
@@ -60,6 +46,7 @@ const Shop = () => {
                 <h1>SHOP</h1>
             </div>
 
+            
             {typeof products === 'object' && !products.then ? products.map((product, index) => {
                 return <div className="cream-bg" key={index} >
                     <div className="container shadow-lg p-3 mb-5 bg-cream rounded" >
@@ -84,7 +71,7 @@ const Shop = () => {
                                                 </div>
                                                 <div className="">
                                                     <button type="button" className="btn btn-dark" onClick={() => addProduct(product)}><i className="fa-solid fa-cart-shopping me-1"></i>Purchase</button>
-                                                    <button type="button" className="btn btn-dark" onClick={() => SingleProduct(product)}><i class="fa-solid fa-magnifying-glass"></i>Quickview</button>
+                                                    <button type="button" className="btn btn-dark">Quicklook</button>
                                                 </div>
                                                 
                                             </div>
@@ -103,6 +90,7 @@ const Shop = () => {
             }) :
                 <h3> We're out finding all the products. . .</h3>
             }
+           
 
 
         </div>

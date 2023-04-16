@@ -6,7 +6,7 @@ import Nav from './componets/Nav';
 import Home from './views/Home';
 import Shop from './views/Shop';
 import Cart from './views/Cart';
-import SingleItem from './views/SingleItem';
+import Product from './views/Product';
 
 function App() {
   return (
@@ -16,7 +16,8 @@ function App() {
       <Route children path='/' element={<Home />} />
       <Route children path='/shop' element={<Shop />} />
       <Route children path='/cart' element={<Cart />} />
-      <Route children path='/singleItem' element={<SingleItem />} />
+      <Route children path='/product' element={<Product />} />
+      
       </Routes>
       
     </div>

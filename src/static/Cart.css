@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
 
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.p-img{
+    height: 100%;
+    width: 100%;
+}
+
 h6, h5, h3{
     font-family:'Poppins', sans-serif;
 }
@@ -23,7 +38,7 @@ h6, h5, h3{
 #r-item{
     color:red;
     background-color: transparent;
-  
+    border: none;
     padding: 2em;
     
     

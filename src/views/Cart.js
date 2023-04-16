@@ -4,6 +4,9 @@ import '../static/Cart.css';
 import Card from 'react-bootstrap/Card';
 import { ListGroup } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 
 const Cart = () => {
@@ -41,7 +44,7 @@ const removeItem = id => {
 }
 
 return(
-    <Card style={{ width: '35rem' }}>
+    <Card className="container"style={{ width: '18rem' }}>
     <Card.Body>
         <Card.Title>Your Cart:</Card.Title>
     </Card.Body>
@@ -76,3 +79,9 @@ return(
 export default Cart;
 
         
+
+
+
+
+
+

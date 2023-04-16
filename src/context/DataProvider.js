@@ -9,14 +9,7 @@ const DataProvider = props => {
     )
 
 }
-// const DataProvider = props => {
-//     const [item, setItem] = useState({title:0, price:0, description: {}});
-//     return(
-//         <DataContext.Provider value={{'item' : item, 'setItem' : setItem}}>
-//             {props.children}
-//         </DataContext.Provider>
-//     )
-// }
+
 
 export default DataProvider;
 export const DataContext = createContext();
