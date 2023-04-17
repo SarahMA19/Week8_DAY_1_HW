@@ -28,10 +28,13 @@ const Shop = () => {
     let prodId = null;
 
     const productId = (product) => {
-        let copyCart = { ...cart }
+        console.log(indProd)
+        let copyCart = [products[prodId]]
         prodId = product;
         indProd = true;
-        setCart(copyCart)
+        console.log(prodId, indProd)
+        console.log(products[prodId])
+        setProducts(copyCart)
 
     }
 
@@ -59,7 +62,7 @@ const Shop = () => {
             </div>
 
 
-            {typeof products === 'object' && !products.then && !indProd ? products.map((product, index) => {
+            {typeof products === 'object' && !products.then ? products.map((product, index) => {
                 return <div className="cream-bg" key={index} >
                     <div className="container shadow-lg p-3 mb-5 bg-cream rounded" >
                         <div className="row g-5 justify-content-evenly">
@@ -100,7 +103,7 @@ const Shop = () => {
                 </div>
 
             }) :
-            typeof products === 'object' && !products.then && indProd?
+            products.length ===1?
             <div className="cream-bg"  >
                 <div className="container shadow-lg p-3 mb-5 bg-cream rounded" >
                     <div className="row g-5 justify-content-evenly">
@@ -113,17 +116,17 @@ const Shop = () => {
                                     <div className="col-6 col-md-7">
                                         <div className="card-body d-flex flex-column">
                                             <div className="h-100">
-                                                <h5 className=""><strong>{products.prodId.title}</strong></h5>
+                                                <h5 className=""><strong>{products.title}</strong></h5>
                                                 <h6 className="card-text">
-                                                    {products.prodId.description}
+                                                    {products.description}
                                                 </h6>
-                                                <h4 className="card-title mb-3"><strong>${Number(products.prodId.price).toFixed(2)}</strong></h4>
+                                                <h4 className="card-title mb-3"><strong>${Number(products.price).toFixed(2)}</strong></h4>
 
 
 
                                             </div>
                                             <div className="">
-                                                <button type="button" className="btn btn-dark" onClick={() => addProduct(products.prodId)}><i className="fa-solid fa-cart-shopping me-1"></i>Purchase</button>
+                                                <button type="button" className="btn btn-dark" onClick={() => addProduct(products)}><i className="fa-solid fa-cart-shopping me-1"></i>Purchase</button>
                                                 
                                             </div>
 

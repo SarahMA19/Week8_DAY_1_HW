@@ -8,6 +8,7 @@ import Shop from './views/Shop';
 import Cart from './views/Cart';
 
 
+
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
       <Route children path='/' element={<Home />} />
       <Route children path='/shop' element={<Shop />} />
       <Route children path='/cart' element={<Cart />} />
+      
       
       
       </Routes>
