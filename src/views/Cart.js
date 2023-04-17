@@ -44,18 +44,17 @@ const removeItem = id => {
 }
 
 return(
-    <Card className="container"style={{ width: '18rem' }}>
+    <Card className="container d-flex "style={{ width: '18rem' }}>
     <Card.Body>
-        <Card.Title>Your Cart:</Card.Title>
+        <Card.Title>Shopping Cart:</Card.Title>
     </Card.Body>
     <ListGroup className="list-group-flush">
     {Object.values(cart.products).map((product, index) => {
         console.log(product);
         return <ListGroup.Item key={index}>
-            <Card.Img variant="top" src={product.data.image} id="p-img"/>
-            <h3>{product.data.title}</h3>
-            <h5>{product.data.category}</h5>
-            <h6>Price: $ {product.data.price} </h6>
+            <Card.Img className="img-fluid rounded-start"variant="top" src={product.data.image} id="p-img"/>
+            <h5>{product.data.title}</h5>
+            <h4><strong>Price: $ {Number(product.data.price).toFixed(2)}</strong> </h4>
             <Button variant="secondary" id="dec-btn" onClick={() => {decreaseQuantity(product.data.id)}} ><b>-</b></Button>
             <span id="q-span">{product.quantity}</span>
             <Button variant="success" id="inc-btn" onClick={() => {increaseQuantity(product.data.id)}} ><b>+</b></Button>
@@ -66,8 +65,8 @@ return(
     
     </ListGroup>
     <Card.Body>
-        <Button variant="" id="checkout">Proceed to Checkout</Button>
-        <Button variant="danger" onClick={clearCart} >Clear Cart</Button>
+        <Button  id="checkout">Proceed to Checkout</Button>
+        <Button  id="clearcart" onClick={clearCart} >Clear Cart</Button>
     </Card.Body>
 </Card>
 )
