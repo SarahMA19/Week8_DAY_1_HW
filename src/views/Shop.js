@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import axios from "axios";
 import '../static/Shop.css';
 import { DataContext } from "../context/DataProvider";
@@ -66,15 +66,13 @@ const Shop = () => {
                                 <div className="card">
                                     <div className="row g-0">
                                         <div className="col-6 col-md-5">
-                                            <img src={product.image} className="card-img img-fluid rounded-start" />
+                                            <img src={product.image} className="card-img img-fluid rounded-start" alt="product" />
                                         </div>
                                         <div className="col-6 col-md-7">
                                             <div className="card-body d-flex flex-column">
                                                 <div className="h-100">
                                                     <h5 className=""><strong>{product.title}</strong></h5>
-                                                    <h6 className="card-text">
-                                                        {product.description}
-                                                    </h6>
+                                                
                                                     <h4 className="card-title mb-3"><strong>${Number(product.price).toFixed(2)}</strong></h4>
 
 
