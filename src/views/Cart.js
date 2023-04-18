@@ -7,13 +7,23 @@ import { Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { useDatabase, useUser } from "reactfire";
+import { set, ref } from  "firebase/database";
 
 
 const Cart = () => {
 
+
+const db = useDatabase();
+const { data:user } = useUser();
+
 const { cart, setCart } = useContext(DataContext);
 
 const clearCart = () => {
+    if (user){
+        set(ref(db, 'carts/' + user.uid), null);
+    }
+
     setCart({size:0, total:0, products: {}});
 }
 
@@ -22,6 +32,9 @@ const increaseQuantity = id => {
     copyCart.size++;
     copyCart.total += copyCart.products[id].data.price;
     copyCart.products[id].quantity++;
+    if (user){
+        set(ref(db, 'carts/' + user.uid), copyCart);
+    }
     setCart(copyCart);
 }
 
@@ -32,6 +45,9 @@ const decreaseQuantity = id => {
     copyCart.products[id].quantity > 1 ?
     copyCart.products[id].quantity-- :
     delete copyCart.products[id];
+    if (user){
+        set(ref(db, 'carts/' + user.uid), copyCart);
+    }
     setCart(copyCart)
 }
 
@@ -40,6 +56,9 @@ const removeItem = id => {
     copyCart.size -= copyCart.products[id].quantity;
     copyCart.total -= copyCart.products[id].quantity*copyCart.products[id].data.price;
     delete copyCart.products[id];
+    if (user){
+        set(ref(db, 'carts/' + user.uid), copyCart);
+    }
     setCart(copyCart)
 }
 
