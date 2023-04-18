@@ -63,14 +63,16 @@ const removeItem = id => {
 }
 
 return(
-    <Card className="container d-flex "style={{ width: '18rem' }}>
+    
+    <Card className="container d-flex "style={{ width: '18rem'}}>
+        <Button  id="clearcart" onClick={clearCart} >Clear Cart</Button>
     <Card.Body>
         <Card.Title>Shopping Cart:</Card.Title>
     </Card.Body>
-    <ListGroup className="list-group-flush">
+    <ListGroup className="list-group-flush" >
     {Object.values(cart.products).map((product, index) => {
         console.log(product);
-        return <ListGroup.Item key={index}>
+        return <ListGroup.Item key={index} >
             <Card.Img className="img-fluid rounded-start"variant="top" src={product.data.image} id="p-img"/>
             <h5>{product.data.title}</h5>
             <h4><strong>Price: $ {Number(product.data.price).toFixed(2)}</strong> </h4>

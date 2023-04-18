@@ -48,7 +48,8 @@ const Nav = props => {
 
     return (
         <div>
-            <nav className="navbar navbar-expand-sm navbar-light bg-light">
+            {console.log(cart.total)}
+            <nav className="navbar navbar-expand navbar-light bg-light">
                 <div className="container-fluid">
                         <Link className="nav-item nav-link active" to='/'>Home</Link>
                         <Link className="nav-item nav-link active" to='/shop'>Shop</Link>
@@ -59,7 +60,7 @@ const Nav = props => {
                             user?
                                 <>
                                     <span>{user.displayName}</span>
-                                    <button className="btn btn-dark" onClick={signout}>Logout</button>
+                                    <button id="logout" className="btn btn-dark" onClick={signout}>Logout</button>
                                 </> :
                                  <button className="btn btn-dark" onClick={signIn}>Login</button>
 
@@ -67,9 +68,11 @@ const Nav = props => {
                         }
 
                         { cart.size === 0 ?
-                        <span id="r-span"><Link className="nav-item nav-link active" to='/shop'></Link><i className="fa-solid fa-cart-shopping"></i></span>:
-                        <span id="r-span"><Link className="nav-item nav-link active" to='/cart'>{cart.size} - ${cart.total} </Link> <i className="fa-solid fa-cart-shopping"></i></span>
-                        }       
+                        <span id="r-span"><Link className="nav-item nav-link active" to='/shop'></Link><i className="fa-solid fa-cart-shopping" id="carticon"></i></span>:
+                        <span id="r-span"><Link className="nav-item nav-link active" to='/cart'>{cart.size} - ${cart.total.toFixed(2)} </Link> <i className="fa-solid fa-cart-shopping"></i></span>
+                        } 
+                        
+
                 </div>
             </nav>
 

@@ -73,7 +73,7 @@ const Shop = () => {
                                                 <div className="h-100">
                                                     <h5 className=""><strong>{product.title}</strong></h5>
                                                 
-                                                    <h4 className="card-title mb-3"><strong>${Number(product.price).toFixed(2)}</strong></h4>
+                                                    <h4 className="card-title mb-3"><strong>${product.price.toFixed(2)}</strong></h4>
 
 
 
