@@ -2,7 +2,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../context/DataProvider";
-import CheckoutForm from "../components/CheckoutForm";
+import CheckoutForm from "../componets/CheckoutForm";
 
 
 const stripePromise = loadStripe("pk_test_51My1ATBmaCyUhyMhlxNbDyiim4xqogMFFAgUWTyyQIl29sQ2VBrgcQIvAlrBYpeKerczkJSHbo7nO2TXXT1sac2v00tpjjlBjy");
