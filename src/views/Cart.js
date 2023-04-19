@@ -9,6 +9,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useDatabase, useUser } from "reactfire";
 import { set, ref } from  "firebase/database";
+import { Link } from "react-router-dom";
 
 
 const Cart = () => {
@@ -86,7 +87,7 @@ return(
     
     </ListGroup>
     <Card.Body>
-        <Button  id="checkout">Proceed to Checkout</Button>
+        <Link to='/checkout'id="checkout" className="btn btn">Proceed to Checkout</Link>
         <Button  id="clearcart" onClick={clearCart} >Clear Cart</Button>
     </Card.Body>
 </Card>
