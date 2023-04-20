@@ -11,8 +11,7 @@ const Indproduct = () => {
     const [data, setData] = useState();
     const db = useDatabase();
     const { data: user } = useUser();
-    const local_url = (`http://127.0.0.1:5000/api/db/${productId}`);
-    console.log(local_url);
+    const local_url = (`https://ecomm-flask.onrender.com/api/db/${productId}`);
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -51,7 +50,6 @@ const Indproduct = () => {
             copyCart.products[product.id].quantity++
             :
             copyCart.products[product.id] = { data: product, quantity: 1 };
-        console.log(copyCart);
         if (user) {
             set(ref(db, 'carts/' + user.uid), copyCart);
         }

@@ -1,6 +1,6 @@
-
+/* 
   
-  form {
+  /* form {
     width: 30vw;
     min-width: 500px;
     align-self: center;
@@ -24,7 +24,7 @@
   }
   
   /* Buttons and links */
-  button {
+  /* button {
     background: #5469d4;
     font-family: Arial, sans-serif;
     color: #ffffff;
@@ -50,7 +50,7 @@
   }
   
   /* spinner/processing state, errors */
-  .spinner,
+  /* .spinner,
   .spinner:before,
   .spinner:after {
     border-radius: 50%;
@@ -118,4 +118,4 @@
       width: 80vw;
       min-width: initial;
     }
-  }
+  }  */ 

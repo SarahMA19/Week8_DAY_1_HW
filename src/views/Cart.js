@@ -72,7 +72,7 @@ return(
     </Card.Body>
     <ListGroup className="list-group-flush" >
     {Object.values(cart.products).map((product, index) => {
-        console.log(product);
+    
         return <ListGroup.Item key={index} >
             <Card.Img className="img-fluid rounded-start"variant="top" src={product.data.image} id="p-img"/>
             <h5>{product.data.title}</h5>

@@ -17,12 +17,11 @@ const Shop = () => {
 
 
     const getProductData = async () => {
-        let response = await axios.get('http://127.0.0.1:5000/api/products');
+        let response = await axios.get('https://ecomm-flask.onrender.com/api/products');
         return response.status === 200 ? response.data : null
     }
     const loadProductData = async () => {
         let data = await getProductData();
-        console.log(data, typeof data)
         setProducts(data.data)
 
     }
@@ -41,7 +40,6 @@ const Shop = () => {
             copyCart.products[product.id].quantity++
             :
             copyCart.products[product.id] = { data: product, quantity: 1 };
-        console.log(copyCart);
         if (user){
             set(ref(db, 'carts/' + user.uid), copyCart);
         }
